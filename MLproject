@@ -1,0 +1,14 @@
+name: pytorch_tutorial
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      test-batch-size: {type: int, default: 64}
+      data: {type: string, default: /u01/data/bdd100k/det/bdd100k.yaml}
+      epochs: {type: int, default: 1}
+    command: |
+          python mlflow_val.py \
+            --epochs {epochs} \
+            --data {data}
